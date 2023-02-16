@@ -31,4 +31,9 @@ body{
     gap: 200px;
 
 }
+.boutons{
+    background-color: #cecece;
+    color: #306978;
+    border-color: #cecece;
+}
 
