@@ -31,4 +31,16 @@ body{
     gap: 200px;
 
 }
+.boutons{
+    background-color: #cecece;
+    color: #306978;
+    border-color: #cecece;
+
+}
+.icones{
+    height: 16px;
+    width: 16px;
+    fill: #306978;
+}
+
 

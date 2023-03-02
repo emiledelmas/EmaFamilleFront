@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nouveau post - Mon forum</title>
+    <style>
+        .toolbar {
+            display: flex;
+            align-items: center;
+        }
+        .toolbar button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Nouveau post</h1>
+<form method="post" action="PageForum">
+    <label for="titre">Titre du post :</label><br>
+    <input type="text" id="titre" name="titre"><br>
+
+    <label for="contenu">Contenu du post :</label><br>
+    <div class="toolbar">
+        <button type="button" onclick="toggleBold()"><b>B</b></button>
+        <button type="button" onclick="toggleItalic()"><i>I</i></button>
+    </div>
+    <textarea id="contenu" name="contenu"></textarea><br>
+
+    <input type="submit" value="Publier">
+    <input type="reset" value="Effacer">
+</form>
+<script>
+    function toggleBold() {
+        var textarea = document.getElementById('contenu');
+        var start = textarea.selectionStart;
+        var end = textarea.selectionEnd;
+        var text = textarea.value;
+        if (start == end) {
+            return;
+        }
+        var newText = text.slice(0, start) + '<b>' + text.slice(start, end) + '</b>' + text.slice(end);
+        textarea.value = newText;
+    }
+
+    function toggleItalic() {
+        var textarea = document.getElementById('contenu');
+        var start = textarea.selectionStart;
+        var end = textarea.selectionEnd;
+        var text = textarea.value;
+        if (start == end) {
+            return;
+        }
+        var newText = text.slice(0, start) + '<i>' + text.slice(start, end) + '</i>' + text.slice(end);
+        textarea.value = newText;
+    }
+</script>
+</body>
+</html>
